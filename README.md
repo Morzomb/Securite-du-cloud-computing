@@ -64,4 +64,4 @@ Cette dernière section vous guidera à travers des concepts avancés de Terrafo
 - Naviguez vers le dossier [S3_KMS](./7_S3_KMS) pour obtenir des instructions détaillées.
 
 ---
-## TP Fait par Ilies BEHUET et Paul LAUZERO [Cliquer sur ici pour voir les TPs](https://github.com/Morzomb/TerraForm_aws)
+## TP Fait par Ilies BEHUET et Paul LAUZERO [Cliquer sur ici pour voir les TPs](https://github.com/Morzomb/Securite-du-cloud-computing/)
