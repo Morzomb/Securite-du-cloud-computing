@@ -21,5 +21,21 @@ terraform {
 
 # Configuration du fournisseur AWS
 provider "aws" {
-  region = "eu-west-3"  # Région AWS dans laquelle déployer les ressources
+  region = "eu-west-1"  # Région AWS dans laquelle déployer les ressources
+}
+
+resource "aws_s3_bucket" "my_bucket" {
+  bucket = var.bucket_name
+  acl    = "private"
+}
+
+resource "aws_s3_bucket_object" "file_upload" {
+  bucket = aws_s3_bucket.my_bucket.id
+  key    = var.object_key
+  source = var.local_file_path
+  content_type = var.mime_type
+}
+
+output "generate_presigned_url_command" {
+  value = "url à copier dans cloudshell : aws s3 presign s3://${aws_s3_bucket.my_bucket.bucket}/${aws_s3_bucket_object.file_upload.key} --expires-in 60"
 }

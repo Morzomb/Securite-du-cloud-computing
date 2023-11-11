@@ -1,13 +1,3 @@
-
-/* 
-Pour tester que votre compte fonctionne :
-terraform init definir rep
-terraform plan 
-terraform apply
-terraform destroy
-*/
-
-# Configuration Terraform
 terraform {
   # Définition des fournisseurs requis
   required_providers {
@@ -117,15 +107,59 @@ resource "aws_iam_role" "vpc_flow_log_role" {
   })
 }
 
+# Déclaration du rôle IAM pour l'instance EC2 avec la politique "AmazonSSMManagedInstanceCore"
+resource "aws_iam_role" "ssm_managed_instance_role" {
+  name = "SSMManagedInstance_Role"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [{
+      Action = "sts:AssumeRole",
+      Effect = "Allow",
+      Principal = {
+        Service = "ec2.amazonaws.com"
+      }
+    }]
+  })
+}
+
+# Attacher la politique "AmazonSSMManagedInstanceCore" au rôle IAM
+resource "aws_iam_role_policy_attachment" "ssm_managed_instance_attachment" {
+  policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+  role       = aws_iam_role.ssm_managed_instance_role.name
+}
+
+# Attacher la politique pour les logs CloudWatch au rôle IAM
+resource "aws_iam_role_policy" "cloudwatch_logs_policy" {
+  name = "CloudWatchLogsPolicy"
+  role = aws_iam_role.ssm_managed_instance_role.id
+
+  policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Action = [
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents",
+          "logs:DescribeLogGroups",
+          "logs:DescribeLogStreams",
+        ],
+        Effect   = "Allow",
+        Resource = "*",
+      },
+    ],
+  })
+}
+
 # Task 5 - Créer des logs de flux VPC
 resource "aws_flow_log" "my_flow_log" {
   log_destination           = aws_cloudwatch_log_group.vpc_logs.arn
   traffic_type              = "ACCEPT"
   vpc_id                    = aws_vpc.my_vpc.id
-  iam_role_arn              = aws_iam_role.vpc_flow_log_role.arn 
+  iam_role_arn              = aws_iam_role.vpc_flow_log_role.arn
   max_aggregation_interval  = 60
 }
-
 
 # Task 6 - Créer une instance EC2
 resource "aws_instance" "my_instance" {
@@ -138,7 +172,7 @@ resource "aws_instance" "my_instance" {
     Name = "Group5EC2Instance"
   }
 
-  iam_instance_profile = "ssm-5src3"
+  iam_instance_profile = aws_iam_instance_profile.ssm_managed_instance_profile.name
   
   user_data = <<-EOF
               #!/bin/bash
@@ -147,14 +181,16 @@ resource "aws_instance" "my_instance" {
               sudo systemctl enable amazon-ssm-agent
               sudo systemctl start amazon-ssm-agent
               EOF
+
+  depends_on = [
+    aws_iam_role.ssm_managed_instance_role,
+    aws_iam_role_policy_attachment.ssm_managed_instance_attachment,
+    aws_iam_instance_profile.ssm_managed_instance_profile,
+  ]
 }
 
-
-# sudo su
-# yum -y update
-# yum install httpd -y
-# cd /var/www/html
-# echo "Response coming from server" > /var/www/html/index.html
-# systemctl start httpd
-# systemctl enable httpd
-# systemctl status httpd
+# Déclaration de l'instance profile associée au rôle IAM pour l'instance EC2
+resource "aws_iam_instance_profile" "ssm_managed_instance_profile" {
+  name = aws_iam_role.ssm_managed_instance_role.name
+  role = aws_iam_role.ssm_managed_instance_role.id
+}
