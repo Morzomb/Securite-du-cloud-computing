@@ -27,17 +27,23 @@ Dans cette section, vous allez effectuer l'installation initiale de Terraform et
 
 - Naviguez vers le dossier [Cloudtrail](./1_Cloudtrail) pour obtenir des instructions détaillées.
 
+![Logo Cloudtrail](image/aws-cloudtrial-post-icon.png)
+
 ## 2_CloudWatchEvent
 
 Dans cette section, vous allez créer votre première infrastructure avec Terraform pour CloudWatchEvent. Vous découvrirez comment déployer des règles d'événements dans Amazon CloudWatch Events pour déclencher des actions en réponse à certains événements dans votre environnement AWS.
 
 - Naviguez vers le dossier [CloudWatchEvent](./2_CloudWatchEvent) pour obtenir des instructions détaillées.
 
+![Logo CloudWatchEvent](image/CloudWatchEvent.png)
+
 ## 3_VPCFlowLog
 
 Cette section vous guidera à travers des concepts avancés de Terraform pour VPCFlowLog, notamment l'utilisation de variables et l'application de bonnes pratiques pour organiser votre code. Les journaux de flux VPC capturent les métadonnées sur le trafic réseau IPv4 dans votre VPC.
 
 - Naviguez vers le dossier [VPCFlowLog](./3_VPCFlowLog) pour obtenir des instructions détaillées.
+
+![Logo vpcflowlogs](image/vpcflowlogs.png)
 
 ## 4_S3_Presign_URL
 
@@ -57,11 +63,15 @@ Dans cette section, vous apprendrez à travailler avec S3_Cross_Region en utilis
 
 - Naviguez vers le dossier [S3_Cross_Region](./6_S3_Cross_Region) pour obtenir des instructions détaillées.
 
+![Logo cross_region](image/cross_region.jpg)
+
 ## 7_S3_KMS
 
 Cette dernière section vous guidera à travers des concepts avancés de Terraform pour S3_KMS. Vous verrez comment mettre en place un environnement collaboratif pour gérer l'infrastructure en toute sécurité, en particulier en utilisant AWS Key Management Service (KMS) pour la gestion des clés de chiffrement des objets stockés dans Amazon S3.
 
 - Naviguez vers le dossier [S3_KMS](./7_S3_KMS) pour obtenir des instructions détaillées.
+
+![Logo article-kms](image/article-kms.png)
 
 ---
 ## [Cliquer sur ici pour voir les TPs](https://github.com/Morzomb/Securite-du-cloud-computing/)
