@@ -194,3 +194,30 @@ resource "aws_iam_instance_profile" "ssm_managed_instance_profile" {
   name = aws_iam_role.ssm_managed_instance_role.name
   role = aws_iam_role.ssm_managed_instance_role.id
 }
+
+###
+
+# Créer une policy IAM pour les logs de flux VPC
+resource "aws_iam_policy" "vpc_flow_log_policy" {
+  name        = "esgi_VPCFlowLog_policy"
+  description = "Policy for VPC flow logs"
+  
+  policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Sid    = "VisualEditor0",
+        Effect = "Allow",
+        Action = "logs:*",
+        Resource = "*",
+      },
+    ],
+  })
+}
+
+
+# Attacher la policy IAM au rôle IAM
+resource "aws_iam_role_policy_attachment" "vpc_flow_log_attachment" {
+  policy_arn = aws_iam_policy.vpc_flow_log_policy.arn
+  role       = aws_iam_role.vpc_flow_log_role.name
+}
