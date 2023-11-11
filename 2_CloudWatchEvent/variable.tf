@@ -12,7 +12,7 @@ variable "instance_vars" {
   })
 }
 
-################### CLOUDTRAIL ###################
+################### CLOUDWATCH ###################
 
 variable "cloudwatch_vars" { type = string }
 

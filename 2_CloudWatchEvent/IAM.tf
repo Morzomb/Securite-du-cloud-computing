@@ -26,27 +26,3 @@ resource "aws_iam_policy_attachment" "policy_attachement" {
   roles      = [aws_iam_role.esgi_EC2_Role.name]
   policy_arn = var.iam_policy_vars[count.index].policy_arn
 }
-
-#resource "aws_iam_policy_attachment" "policy_attachement" {
-#  name       = "policy_attachement"
-#  roles      = [aws_iam_role.esgi_EC2_Role.name]
-#  policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
-#}
-#
-#resource "aws_iam_policy_attachment" "policy_attachment2" {
-#  name       = "policy_attachment2"
-#  roles      = [aws_iam_role.esgi_EC2_Role.name]
-#  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
-#}
-#
-#resource "aws_iam_policy_attachment" "policy_attachment3" {
-#  name       = "policy_attachment3"
-#  roles      = [aws_iam_role.esgi_EC2_Role.name]
-#  policy_arn = "arn:aws:iam::aws:policy/AmazonSNSFullAccess"
-#}
-#
-#resource "aws_iam_policy_attachment" "policy_attachment4" {
-#  name       = "policy_attachment4"
-#  roles      = [aws_iam_role.esgi_EC2_Role.name]
-#  policy_arn = "arn:aws:iam::aws:policy/AmazonEventBridgeFullAccess"
-#}
