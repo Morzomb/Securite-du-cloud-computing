@@ -1,16 +1,16 @@
 resource "aws_s3_bucket" "whizlabs_cloudtrail_kms" {
-  bucket = "whizlabs-cloudtrail-kms"  # Remplacez par le nom souhaité
-  acl    = "private"  # Modifiez selon vos besoins
-  force_destroy = true
+  bucket = var.whizlabs_cloudtrail_kms_vars.bucket  # Remplacez par le nom souhaité
+  acl    = var.whizlabs_cloudtrail_kms_vars.acl # Modifiez selon vos besoins
+  force_destroy = var.whizlabs_cloudtrail_kms_vars.force_destroy
 
   versioning {
-    enabled = true
+    enabled = var.whizlabs_cloudtrail_kms_vars.enabled
   }
 
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
-        sse_algorithm = "aws:kms"
+        sse_algorithm = var.whizlabs_cloudtrail_kms_vars.sse_algorithm
         kms_master_key_id = aws_kms_key.whiz_kms_key.arn
       }
     }
@@ -20,11 +20,11 @@ resource "aws_s3_bucket" "whizlabs_cloudtrail_kms" {
 
 resource "aws_s3_bucket_object" "encrypted_object" {
   bucket = aws_s3_bucket.whizlabs_cloudtrail_kms.bucket
-  key    = "toto.txt"  # Remplacez par la clé souhaitée
-  acl    = "private"  # Modifiez selon vos besoins
+  key    = var.encrypted_object_vars.key  # Remplacez par la clé souhaitée
+  acl    = var.encrypted_object_vars.acl  # Modifiez selon vos besoins
 
-  source                  = "toto.txt"  # Remplacez par le chemin local de votre fichier
-  server_side_encryption  = "aws:kms"
+  source                  = var.encrypted_object_vars.source  # Remplacez par le chemin local de votre fichier
+  server_side_encryption  = var.encrypted_object_vars.server_side_encryption
   kms_key_id              = aws_kms_key.whiz_kms_key.arn  # Utilisez l'ARN de la clé KMS
 }
 

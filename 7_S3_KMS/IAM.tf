@@ -21,7 +21,7 @@ resource "aws_iam_role" "ssm_role" {
 }
 
 resource "aws_iam_role" "whizlabs_kms_role" {
-  name = "whizlabs_user-12345"  # Remplacez par le nom souhaité
+  name = var.whizlabs_kms_role_vars  # Remplacez par le nom souhaité
 
   assume_role_policy = <<-EOF
 {

@@ -1,7 +1,7 @@
 resource "aws_kms_key" "whiz_kms_key" {
-  description             = "KMS key to encrypt S3 Objects"
-  deletion_window_in_days = 7
-  enable_key_rotation     = true
+  description             = var.whiz_kms_key_vars.description
+  deletion_window_in_days = var.whiz_kms_key_vars.deletion_window_in_days
+  enable_key_rotation     = var.whiz_kms_key_vars.enable_key_rotation
 
   policy = jsonencode({
     Version = "2012-10-17",
@@ -17,11 +17,11 @@ resource "aws_kms_key" "whiz_kms_key" {
   })
 
   tags = {
-    Description = "KMS key to encrypt S3 Objects"
+    Description = var.whiz_kms_key_vars.tags
   }
 }
 
 resource "aws_kms_alias" "alias" {
-  name          = "alias/whiz_kms_key"
+  name          = var.alias_vars
   target_key_id = aws_kms_key.whiz_kms_key.key_id
 }
