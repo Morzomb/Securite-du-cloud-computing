@@ -6,5 +6,9 @@
 *.rar
 #
 *.tfstate*
+<<<<<<< HEAD
 # 
+=======
+#
+>>>>>>> a38942f (ter)
 .gitignore
