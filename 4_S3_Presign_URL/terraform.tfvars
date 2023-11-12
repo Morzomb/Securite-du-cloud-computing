@@ -8,7 +8,7 @@ aws_vars = "eu-west-1"
 
 # Variables pour la configuration du compartiment S3
 my_bucket_vars ={
-    bucket      = "esgigroup5"
+    bucket      = "esgigroup4"
     acl         = "private"
 }
 

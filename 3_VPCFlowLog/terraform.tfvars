@@ -9,13 +9,13 @@ aws_vars = "eu-west-1"
 instance_vars ={
     ami                         = "ami-0e309a5f3a6dd97ea"
     instance_type               = "t2.micro"
-    name                        = "Group5EC2Instance"
+    name                        = "Group4EC2Instance"
 }
 
 ################### CLOUDWATCH ###################
 
 # Variables pour les journaux CloudWatch
-vpc_logs_vars = "group5vpclogs"
+vpc_logs_vars = "group4vpclogs"
 cloudwatch_logs_policy_vars = "CloudWatchLogsPolicy"
 
 # Variables pour la politique IAM des logs VPC
@@ -42,13 +42,13 @@ my_vpc_vars ={
 }
 
 # Variables pour la configuration de la passerelle Internet
-my_internet_gateway_vars = "Group5InternetGateway"
+my_internet_gateway_vars = "Group4InternetGateway"
 
 # Variables pour la configuration du sous-réseau
 my_subnet_vars ={
     cidr_block              = "172.16.10.0/24"
     map_public_ip_on_launch = true
-    name                    = "group5sub"
+    name                    = "group4sub"
 }
 
 # Variables pour la configuration de la route vers Internet
