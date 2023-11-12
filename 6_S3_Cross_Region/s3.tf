@@ -1,3 +1,5 @@
+# S3.tf
+
 # Définition du seau S3 pour la destination avec les paramètres spécifiés dans les variables
 resource "aws_s3_bucket" "destination" {
   bucket        = var.aws_s3_bucket_destination.bucket

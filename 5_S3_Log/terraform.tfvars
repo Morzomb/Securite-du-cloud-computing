@@ -1,5 +1,7 @@
+# terraform.tfvars
+
 ################ Main ################
-region = "eu-west-1"
+aws_vars = "eu-west-1"
 
 ################ Network ################
 

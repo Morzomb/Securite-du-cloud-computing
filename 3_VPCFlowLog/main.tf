@@ -1,3 +1,6 @@
+# main.tf
+
+# Configuration Terraform
 terraform {
   # Définition des fournisseurs requis
   required_providers {
@@ -11,5 +14,6 @@ terraform {
 
 # Configuration du fournisseur AWS
 provider "aws" {
-  region = var.aws_vars  # Région AWS dans laquelle déployer les ressources
+  region = var.aws_vars          # Région AWS dans laquelle déployer les ressources
 }
+

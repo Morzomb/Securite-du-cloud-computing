@@ -1,14 +1,19 @@
-# Configuration du fournisseur AWS
+# main.tf
+
+# Configuration Terraform
 terraform {
+  # Définition des fournisseurs requis
   required_providers {
+    # Fournisseur AWS
     aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+      source  = "hashicorp/aws"  # Source du fournisseur AWS
+      version = "~> 5.0"         # Version du fournisseur (série 5.x)
     }
   }
 }
 
-# Fournisseur AWS avec la région spécifiée
+# Configuration du fournisseur AWS
 provider "aws" {
-  region = var.region
+  region = var.aws_vars          # Région AWS dans laquelle déployer les ressources
 }
+

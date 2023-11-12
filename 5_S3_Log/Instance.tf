@@ -1,3 +1,5 @@
+# instance.tf
+
 # Création d'un groupe de sécurité pour les serveurs web
 resource "aws_security_group" "webserver_sg" {
   name_prefix = var.Security_Group.name_prefix

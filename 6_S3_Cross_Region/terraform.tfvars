@@ -1,3 +1,4 @@
+# terraform.tfvars
 ################ Iam ################
 
 # Nom du rôle IAM pour la réplication

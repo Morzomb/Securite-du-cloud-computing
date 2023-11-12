@@ -1,3 +1,5 @@
+# IAM.tf
+
 resource "aws_iam_instance_profile" "iam_profile_instance" {
   name = var.iam_instance_vars
   role = aws_iam_role.esgi_EC2_Role.name

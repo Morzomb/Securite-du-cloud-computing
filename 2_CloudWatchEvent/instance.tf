@@ -1,3 +1,5 @@
+# instance.tf
+
 resource "aws_instance" "Group4EC2Server" {
   ami           = var.instance_vars.ami 
   instance_type = var.instance_vars.instance_type

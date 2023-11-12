@@ -1,3 +1,5 @@
+# cloudwatch.tf
+
 resource "aws_cloudwatch_log_group" "vpc_logs" {
   name = var.vpc_logs_vars
 }

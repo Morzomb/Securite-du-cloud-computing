@@ -1,3 +1,5 @@
+# instance.tf
+
 resource "aws_instance" "ec2_instance" {
   ami           = var.instance_vars.ami 
   instance_type = var.instance_vars.instance_type

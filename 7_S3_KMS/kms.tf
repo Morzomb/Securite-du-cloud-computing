@@ -1,3 +1,5 @@
+# kms.tf
+
 resource "aws_kms_key" "whiz_kms_key" {
   description             = var.whiz_kms_key_vars.description
   deletion_window_in_days = var.whiz_kms_key_vars.deletion_window_in_days

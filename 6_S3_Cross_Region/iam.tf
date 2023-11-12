@@ -1,3 +1,5 @@
+# IAM.tf
+
 # Définition d'un rôle IAM pour la réplication avec le nom spécifié dans la variable
 resource "aws_iam_role" "replication" {
   name               = var.aws_iam_role_replication

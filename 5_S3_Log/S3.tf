@@ -1,3 +1,5 @@
+# S3.tf
+
 # Création d'un bucket S3 pour les logs du Load Balancer
 resource "aws_s3_bucket" "log-loadbalancer-s3-esgi" {
   bucket        = var.Log_LoadBalancer_S3.bucket

@@ -1,3 +1,5 @@
+# sns.tf
+
 resource "aws_sns_topic" "Server_Monitor" {
   name          = var.sns_topic_vars.name
   display_name  = var.sns_topic_vars.display_name

@@ -1,3 +1,5 @@
+# variable.tf
+
 ################### AWS ###################
 
 variable "aws_vars" { type = string }

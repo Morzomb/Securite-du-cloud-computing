@@ -1,9 +1,13 @@
+#terraform.tfvars
+
 ################### AWS ###################
 
+# Variables AWS
 aws_vars = "eu-west-1"
 
 ################### EC2 ###################
 
+# Variables pour l'instance EC2
 instance_vars ={
     ami                         = "ami-0e309a5f3a6dd97ea"
     instance_type               = "t2.micro"
@@ -12,6 +16,7 @@ instance_vars ={
 
 ################### CLOUDTRAIL ###################
 
+# Variables pour CloudTrail
 cloudtrail_vars ={
     name                            = "cloudtrail_ilies"
     s3_key_prefix                   = "prefix"
@@ -20,6 +25,7 @@ cloudtrail_vars ={
 
 ################### S3_BUKKET ###################
 
+# Variables pour le seau S3
 s3_bucket_vars ={
     bucket          = "bucket-ilies"
     force_destroy   = true
@@ -27,8 +33,10 @@ s3_bucket_vars ={
 
 ################### IAM ###################
 
+# Variables pour IAM
 iam_vars = "ssm_instance_profile"
 
+# Variables pour le rôle IAM
 iam_role_vars ={
     name = "ssm_role"
 }

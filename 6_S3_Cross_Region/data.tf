@@ -1,3 +1,5 @@
+# data.tf
+
 # Définition du document de politique IAM pour l'assumption de rôle
 data "aws_iam_policy_document" "assume_role" {
   statement {

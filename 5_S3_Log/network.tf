@@ -1,3 +1,5 @@
+# network.tf
+
 # Création d'une VPC
 resource "aws_vpc" "main" {
   cidr_block           = var.aws_vpc.cidr_block

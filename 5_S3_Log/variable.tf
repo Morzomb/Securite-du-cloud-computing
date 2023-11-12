@@ -1,7 +1,9 @@
+# variable.tf
+
 ################ Main ################
 
 # Déclaration de la région AWS
-variable "region" {
+variable "aws_vars" {
   type = string
 }
 

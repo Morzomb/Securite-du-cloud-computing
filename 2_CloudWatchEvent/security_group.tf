@@ -1,3 +1,5 @@
+# security_group.tf
+
 resource "aws_security_group" "EC2_Server_SG" {
     name_prefix = var.Security_Group.name_prefix
     description = var.Security_Group.description

@@ -1,3 +1,5 @@
+# cloudtrail.tf
+
 resource "aws_cloudtrail" "whiz_kms_trail" {
   name                          = var.whiz_kms_trail_vars.name
   s3_bucket_name                = aws_s3_bucket.whizlabs_cloudtrail_kms.bucket

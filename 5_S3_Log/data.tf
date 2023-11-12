@@ -1,3 +1,5 @@
+# data.tf
+
 # Récupération des données de modèle pour l'initialisation des instances publiques
 data "template_file" "init_public" {
   template = file(var.template_file_init_public.template)

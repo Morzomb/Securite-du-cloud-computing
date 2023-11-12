@@ -1,3 +1,5 @@
+# main.tf
+
 terraform {
   # Définition des fournisseurs requis
   required_providers {

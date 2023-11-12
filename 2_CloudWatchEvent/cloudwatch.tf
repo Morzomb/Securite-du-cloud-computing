@@ -1,3 +1,5 @@
+# cloudwatch.tf
+
 resource "aws_cloudwatch_event_rule" "EC2_State_Change_Event" {
   name = var.cloudwatch_vars
   is_enabled = true

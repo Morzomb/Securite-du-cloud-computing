@@ -1,3 +1,6 @@
+# data.tf
+
+# Données de modèle pour le script utilisateur SSM Agent
 data "template_file" "ssm_agent_sh" {
   template = file("user_data.sh")
   vars = {
@@ -5,4 +8,5 @@ data "template_file" "ssm_agent_sh" {
   }
 }
 
+# Informations d'identification de l'appelant AWS actuel
 data "aws_caller_identity" "current" {}

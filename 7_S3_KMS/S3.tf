@@ -1,3 +1,5 @@
+# S3.tf
+
 resource "aws_s3_bucket" "whizlabs_cloudtrail_kms" {
   bucket = var.whizlabs_cloudtrail_kms_vars.bucket  # Remplacez par le nom souhaité
   acl    = var.whizlabs_cloudtrail_kms_vars.acl # Modifiez selon vos besoins

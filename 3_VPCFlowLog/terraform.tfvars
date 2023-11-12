@@ -1,3 +1,5 @@
+# terraform.tfvars
+
 ################### AWS ###################
 
 aws_vars = "eu-west-1"

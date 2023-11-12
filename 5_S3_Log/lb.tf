@@ -1,3 +1,5 @@
+# lb.tf
+
 # Création d'un Application Load Balancer
 resource "aws_lb" "web_server_lb" {
   name               = var.aws_lb_web_server_lb.name

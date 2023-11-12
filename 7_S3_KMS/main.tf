@@ -1,3 +1,5 @@
+# main.tf
+
 # Configuration Terraform
 terraform {
   # Définition des fournisseurs requis

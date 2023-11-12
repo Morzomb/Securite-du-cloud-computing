@@ -1,3 +1,5 @@
+# network.tf
+
 resource "aws_vpc" "my_vpc" {
   cidr_block           = var.my_vpc_vars.cidr_block
   instance_tenancy     = var.my_vpc_vars.instance_tenancy
