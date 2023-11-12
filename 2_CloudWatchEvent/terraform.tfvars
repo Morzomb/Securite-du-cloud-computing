@@ -60,7 +60,7 @@ sns_topic_vars ={
 # Variables pour l'abonnement au sujet SNS
 sns_topic_subscription_vars ={
     protocol = "email"
-    endpoint = "ilies.behuet@gmail.com"
+    endpoint = "une_address_mail@gmail.com"
 }
 
 ################### SEC GROUP ###################
