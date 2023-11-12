@@ -1,11 +1,13 @@
 # variable.tf
 
- ################### AWS ###################
+################### AWS ###################
 
+# Variable pour spécifier la région AWS.
 variable "aws_vars" { type = string }
 
 ################### EC2 ###################
 
+# Variables pour la configuration de l'instance EC2.
 variable "instance_vars" {
   type = object({
     ami             = string
@@ -16,10 +18,10 @@ variable "instance_vars" {
 
 ################### CLOUDTRAIL ###################
 
+# Variables pour la configuration du CloudTrail avec KMS.
 variable "whiz_kms_trail_vars" {
   type = object({
     name                            = string
-    s3_key_prefix                   = string
     include_global_service_events   = bool
     is_multi_region_trail           = bool
     read_write_type                 = string
@@ -29,6 +31,7 @@ variable "whiz_kms_trail_vars" {
 
 ################### KMS ###################
 
+# Variables pour la configuration de la clé KMS.
 variable "whiz_kms_key_vars" {
   type = object({
     description             = string
@@ -38,10 +41,12 @@ variable "whiz_kms_key_vars" {
   })
 }
 
+# Variable pour l'alias de la clé KMS.
 variable "alias_vars" { type = string }
 
-################### S3_BUKKET ###################
+################### S3_BUCKET ###################
 
+# Variables pour la configuration du bucket S3 utilisé par CloudTrail avec KMS.
 variable "whizlabs_cloudtrail_kms_vars" {
   type = object({
     bucket          = string
@@ -52,6 +57,7 @@ variable "whizlabs_cloudtrail_kms_vars" {
   })
 }
 
+# Variables pour la configuration de l'objet S3 chiffré.
 variable "encrypted_object_vars" {
   type = object({
     key                     = string
@@ -63,12 +69,15 @@ variable "encrypted_object_vars" {
 
 ################### IAM ###################
 
+# Variable pour la configuration de l'instance profile IAM.
 variable "iam_vars" { type = string }
 
+# Variables pour la configuration du rôle IAM.
 variable "iam_role_vars" {
   type = object({
     name = string
   })
 }
 
+# Variable pour le nom du rôle IAM utilisé par KMS.
 variable "whizlabs_kms_role_vars" { type = string }

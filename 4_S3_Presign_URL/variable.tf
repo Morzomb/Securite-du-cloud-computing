@@ -4,8 +4,9 @@
 
 variable "aws_vars" { type = string }
 
-################### BUKKET ###################
+################### BUCKET ###################
 
+# Variables pour la configuration du compartiment S3
 variable "my_bucket_vars" {
   type = object({
     bucket      = string
@@ -13,6 +14,7 @@ variable "my_bucket_vars" {
   })
 }
 
+# Variables pour le chargement d'un objet dans le compartiment S3
 variable "file_upload_vars" {
   type = object({
     key           = string

@@ -2,10 +2,12 @@
 
 ################### AWS ###################
 
+# Variable pour les paramètres AWS
 variable "aws_vars" { type = string }
 
 ################### EC2 ###################
 
+# Variable pour les paramètres de l'instance EC2
 variable "instance_vars" {
   type = object({
     ami             = string
@@ -16,19 +18,22 @@ variable "instance_vars" {
 
 ################### CLOUDWATCH ###################
 
+# Variable pour la règle CloudWatch
 variable "cloudwatch_vars" { type = string }
 
 ################### IAM ###################
 
+# Variable pour le profil IAM de l'instance
 variable "iam_instance_vars" { type = string }
 
+# Variable pour les paramètres du rôle IAM
 variable "iam_role_vars" {
   type = object({
     name = string
   })
 }
 
-# Liste des policy
+# Liste des politiques IAM attachées au rôle
 variable "iam_policy_vars" {
   type = list(object({
     name        = string
@@ -38,6 +43,7 @@ variable "iam_policy_vars" {
 
 ################### SNS ###################
 
+# Variables pour le sujet SNS
 variable "sns_topic_vars" {
   type = object({
     name         = string
@@ -45,6 +51,7 @@ variable "sns_topic_vars" {
   })
 }
 
+# Variables pour l'abonnement au sujet SNS
 variable "sns_topic_subscription_vars" {
   type = object({
     protocol = string
@@ -54,6 +61,7 @@ variable "sns_topic_subscription_vars" {
 
 ################### SEC GROUP ###################
 
+# Variables pour le groupe de sécurité
 variable "Security_Group" {
   type = object({
     name_prefix         = string

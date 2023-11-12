@@ -1,9 +1,11 @@
 # cloudwatch.tf
 
+# Groupe de journaux CloudWatch pour les logs VPC
 resource "aws_cloudwatch_log_group" "vpc_logs" {
   name = var.vpc_logs_vars
 }
 
+# Politique IAM du rôle pour les logs CloudWatch
 resource "aws_iam_role_policy" "cloudwatch_logs_policy" {
   name = var.cloudwatch_logs_policy_vars
   role = aws_iam_role.ssm_managed_instance_role.id
@@ -12,7 +14,7 @@ resource "aws_iam_role_policy" "cloudwatch_logs_policy" {
     Version = "2012-10-17",
     Statement = [
       {
-        Action = [
+        Action   = [
           "logs:CreateLogGroup",
           "logs:CreateLogStream",
           "logs:PutLogEvents",
@@ -26,6 +28,7 @@ resource "aws_iam_role_policy" "cloudwatch_logs_policy" {
   })
 }
 
+# Flux de logs VPC vers CloudWatch
 resource "aws_flow_log" "my_flow_log" {
   log_destination           = aws_cloudwatch_log_group.vpc_logs.arn
   traffic_type              = "ACCEPT"
@@ -34,6 +37,7 @@ resource "aws_flow_log" "my_flow_log" {
   max_aggregation_interval  = 60
 }
 
+# Politique IAM pour le flux de logs VPC
 resource "aws_iam_policy" "vpc_flow_log_policy" {
   name        = var.vpc_flow_log_policy_vars.name
   description = var.vpc_flow_log_policy_vars.description
@@ -51,6 +55,7 @@ resource "aws_iam_policy" "vpc_flow_log_policy" {
   })
 }
 
+# Attachement de la politique IAM au rôle pour le flux de logs VPC
 resource "aws_iam_role_policy_attachment" "vpc_flow_log_attachment" {
   policy_arn = aws_iam_policy.vpc_flow_log_policy.arn
   role       = aws_iam_role.vpc_flow_log_role.name

@@ -14,10 +14,11 @@ instance_vars ={
 
 ################### CLOUDWATCH ###################
 
+# Variables pour les journaux CloudWatch
 vpc_logs_vars = "group5vpclogs"
-
 cloudwatch_logs_policy_vars = "CloudWatchLogsPolicy"
 
+# Variables pour la politique IAM des logs VPC
 vpc_flow_log_policy_vars ={
     name        = "esgi_VPCFlowLog_policy"
     description = "Policy for VPC flow logs"
@@ -25,13 +26,13 @@ vpc_flow_log_policy_vars ={
 
 ################### IAM ###################
 
+# Variables pour les rôles IAM
 iam_role_vpc_vars = "VPCFlowLog_Role"
-
 iam_role_ssm_vars = "SSMManagedInstance_Role"
-
 
 ################### NETWORK ###################
 
+# Variables pour la configuration de la VPC
 my_vpc_vars ={
     cidr_block              = "172.16.0.0/16"
     instance_tenancy        = "default"
@@ -40,19 +41,23 @@ my_vpc_vars ={
     name                    = "aws_vpc_terraform"
 }
 
+# Variables pour la configuration de la passerelle Internet
 my_internet_gateway_vars = "Group5InternetGateway"
 
+# Variables pour la configuration du sous-réseau
 my_subnet_vars ={
     cidr_block              = "172.16.10.0/24"
     map_public_ip_on_launch = true
     name                    = "group5sub"
 }
 
+# Variables pour la configuration de la route vers Internet
 internet_vars ={
     cidr_block              = "0.0.0.0/0"
     name                    = "route_internet"
 }
 
+# Variables pour la configuration du groupe de sécurité
 Security_Group = {
   name                  = "HTTP_Security_Group"
   ingress_from_port     = 80

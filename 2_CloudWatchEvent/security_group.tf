@@ -1,5 +1,6 @@
 # security_group.tf
 
+# Configuration du groupe de sécurité EC2_Server_SG, avec un préfixe de nom, une description, et des règles d'entrée et de sortie définies par les variables.
 resource "aws_security_group" "EC2_Server_SG" {
     name_prefix = var.Security_Group.name_prefix
     description = var.Security_Group.description

@@ -1,5 +1,6 @@
 # network.tf
 
+# Configuration de la VPC "my_vpc" avec le bloc CIDR, la tenance des instances, la prise en charge des noms DNS, et les balises associées.
 resource "aws_vpc" "my_vpc" {
   cidr_block           = var.my_vpc_vars.cidr_block
   instance_tenancy     = var.my_vpc_vars.instance_tenancy
@@ -11,6 +12,7 @@ resource "aws_vpc" "my_vpc" {
   }
 }
 
+# Configuration de la passerelle Internet "my_internet_gateway" associée à la VPC "my_vpc" et les balises associées.
 resource "aws_internet_gateway" "my_internet_gateway" {
   vpc_id = aws_vpc.my_vpc.id
 
@@ -19,6 +21,7 @@ resource "aws_internet_gateway" "my_internet_gateway" {
   }
 }
 
+# Configuration du sous-réseau "my_subnet" dans la VPC "my_vpc" avec le bloc CIDR, l'attribution automatique d'adresses IP publiques, et les balises associées.
 resource "aws_subnet" "my_subnet" {
   vpc_id     = aws_vpc.my_vpc.id
   cidr_block = var.my_subnet_vars.cidr_block
@@ -29,6 +32,7 @@ resource "aws_subnet" "my_subnet" {
   }
 }
 
+# Configuration de la table de routage "internet" dans la VPC "my_vpc" avec une route vers Internet via la passerelle Internet "my_internet_gateway" et les balises associées.
 resource "aws_route_table" "internet" {
   vpc_id = aws_vpc.my_vpc.id
 
@@ -42,6 +46,7 @@ resource "aws_route_table" "internet" {
   }
 }
 
+# Configuration du groupe de sécurité "http_allowed" dans la VPC "my_vpc" avec les règles d'ingress et d'egress spécifiées, et les balises associées.
 resource "aws_security_group" "http_allowed" {
   vpc_id = aws_vpc.my_vpc.id
   
@@ -64,6 +69,7 @@ resource "aws_security_group" "http_allowed" {
   }
 }
 
+# Association du sous-réseau "my_subnet" avec la table de routage "internet".
 resource "aws_route_table_association" "public" {
   subnet_id      = aws_subnet.my_subnet.id
   route_table_id = aws_route_table.internet.id

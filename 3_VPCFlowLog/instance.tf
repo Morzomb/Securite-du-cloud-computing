@@ -1,5 +1,6 @@
 # instance.tf
 
+# Configuration de l'instance EC2 "my_instance" avec l'ID de l'AMI, le type d'instance, le sous-réseau, les groupes de sécurité, les balises, le profil IAM, les données utilisateur pour l'initialisation de l'agent SSM, et les dépendances pour s'assurer que les ressources IAM sont créées avant l'instance EC2.
 resource "aws_instance" "my_instance" {
   ami           = var.instance_vars.ami 
   instance_type = var.instance_vars.instance_type
@@ -20,4 +21,3 @@ resource "aws_instance" "my_instance" {
     aws_iam_instance_profile.ssm_managed_instance_profile,
   ]
 }
-
