@@ -22,7 +22,3 @@ Ce document a pour objectif d'expliquer le processus de génération d'une URL p
 - Spécification d'une durée d'expiration en secondes.
 - Copie de l'URL générée et test en la collant dans un nouvel onglet du navigateur. L'URL n'est valide que pendant la durée spécifiée.
 
-## Tâche 5 : Suppression des ressources créées
-- Rappel de l'importance de supprimer le fichier et le seau S3 pour éviter des frais inutiles.
-
-Suivez ces étapes pour maîtriser la génération d'URL pré-signée S3 à l'aide de CloudShell, tout en comprenant l'importance de la gestion des ressources pour optimiser les coûts AWS.

@@ -29,8 +29,5 @@ Le processus est divisé en huit tâches :
 ### Tâche 7 : Accéder et Visualiser les Fichiers Journaux CloudTrail
 - Consultez les fichiers journaux CloudTrail dans le seau S3 relatifs aux opérations de chiffrement KMS.
 
-### Tâche 8 : Supprimer les Ressources AWS Créées
-- Supprimez toutes les ressources AWS créées au cours du processus.
-
 ## Conclusion du Document
 En suivant ces étapes, le document démontre comment utiliser AWS KMS et CloudTrail pour sécuriser et surveiller les objets stockés dans un seau S3, renforçant ainsi la sécurité et la traçabilité des opérations de chiffrement.

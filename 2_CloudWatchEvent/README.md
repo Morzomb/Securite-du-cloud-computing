@@ -18,8 +18,3 @@ Ce guide détaille les étapes pour configurer AWS CloudWatch Events afin de dé
 ## Tâche 5 : Test de la règle CloudWatch Events
 - Effectuer des tests en arrêtant et en redémarrant une instance EC2.
 - Vérifier la réception des emails de notification.
-
-## Tâche 6 : Suppression de toutes les ressources
-- Supprimer toutes les ressources créées au cours des étapes précédentes.
-
-Suivez ces étapes pour mettre en place un système de notifications basé sur les événements CloudWatch, permettant une gestion proactive des changements d'état des instances EC2, avec la possibilité de tester et de vérifier les notifications par email.

@@ -32,7 +32,3 @@ Ce guide détaille les étapes pour configurer VPC Flow Logs, un service permett
 - Accès au groupe de journaux CloudWatch créé précédemment.
 - Observation du flux de journaux correspondant au VPC Flow Log, en particulier des événements de journal reflétant le trafic vers l'instance EC2.
 
-## Tâche 9 : Suppression de toutes les ressources
-- Suppression de toutes les ressources créées au cours des étapes précédentes.
-
-Suivez ces étapes pour mettre en place et tester VPC Flow Logs, observer le trafic réseau, et consulter les journaux CloudWatch pour une gestion proactive de votre infrastructure AWS.
