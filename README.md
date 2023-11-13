@@ -39,7 +39,7 @@ Dans cette section, vous allez créer votre première infrastructure avec Terraf
 
 ## 3_VPCFlowLog
 
-Cette section vous guidera à travers des concepts avancés de Terraform pour VPCFlowLog, notamment l'utilisation de variables et l'application de bonnes pratiques pour organiser votre code. Les journaux de flux VPC capturent les métadonnées sur le trafic rébucket IPv4 dans votre VPC.
+Cette section vous guidera à travers des concepts avancés de Terraform pour VPCFlowLog, notamment l'utilisation de variables et l'application de bonnes pratiques pour organiser votre code. Les journaux de flux VPC capturent les métadonnées sur le trafic réseau IPv4 dans votre VPC.
 
 - Naviguez vers le dossier [VPCFlowLog](./3_VPCFlowLog) pour obtenir des instructions détaillées.
 
