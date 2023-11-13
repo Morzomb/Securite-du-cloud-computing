@@ -1,4 +1,4 @@
-# Securite-du-cloud-computing GROUP-5
+# Securite-du-cloud-computing GROUP-4
 
 Ce projet GitHub contient des ressources et des fichiers de configuration pour vous aider à apprendre et à travailler avec Terraform. Terraform est une infrastructure as code (IaC) qui permet de créer, gérer et automatiser l'infrastructure cloud de manière efficace et reproductible.
 
