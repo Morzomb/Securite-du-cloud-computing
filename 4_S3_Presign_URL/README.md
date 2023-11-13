@@ -1,15 +1,15 @@
 # Génération d'une URL pré-signée S3 avec CloudShell
 
-Ce document a pour objectif d'expliquer le processus de génération d'une URL pré-signée S3 en utilisant CloudShell. Cette URL permet un accès temporaire à un objet stocké dans un seau S3. Les principales tâches sont les suivantes :
+Ce document a pour objectif d'expliquer le processus de génération d'une URL pré-signée S3 en utilisant CloudShell. Cette URL permet un accès temporaire à un objet stocké dans un bucket S3. Les principales tâches sont les suivantes :
 
 ## Objectif du document
 - Explication du concept d'URL pré-signée S3 et de son utilisation pour accéder à un objet S3 pendant une durée limitée.
 
-## Tâche 1 : Création d'un seau S3
-- Création d'un seau S3 avec un nom unique et une région spécifique.
+## Tâche 1 : Création d'un bucket S3
+- Création d'un bucket S3 avec un nom unique et une région spécifique.
 - Désactivation des ACL pour la propriété des objets.
 
-## Tâche 2 : Téléchargement d'un fichier dans un seau S3
+## Tâche 2 : Téléchargement d'un fichier dans un bucket S3
 - Téléchargement d'un fichier image depuis l'ordinateur local ou un lien fourni.
 - Copie de l'URI S3 du fichier téléchargé.
 
