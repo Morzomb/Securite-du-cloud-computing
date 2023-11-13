@@ -2,9 +2,9 @@
 
 Ce guide détaille les étapes pour configurer AWS CloudWatch Events afin de déclencher des actions en fonction des changements d'état ou de métriques des ressources AWS, avec un accent sur les notifications par email. Les principales tâches sont les suivantes :
 
-## Tâche 1 : Configuration de CloudTrail et d'un seau S3 pour enregistrer les événements CloudWatch
+## Tâche 1 : Configuration de CloudTrail et d'un bucket S3 pour enregistrer les événements CloudWatch
 - Utiliser AWS CloudTrail pour enregistrer les événements CloudWatch.
-- Configurer un seau S3 pour stocker ces événements.
+- Configurer un bucket S3 pour stocker ces événements.
 
 ## Tâche 2 : Création d'un sujet SNS pour les notifications par email
 - Mettre en place un sujet SNS (Simple Notification Service) pour envoyer des notifications par email.
